@@ -1,5 +1,6 @@
-.project
-.metadata
+.*
+!.gitignore
 .recommenders/*
 netty-json_push/bin/*
 netty-json_push/.*
+/bin/

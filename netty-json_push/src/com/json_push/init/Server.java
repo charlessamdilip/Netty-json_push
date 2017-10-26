@@ -1,4 +1,4 @@
-package com.json_push.server;
+package com.json_push.init;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
