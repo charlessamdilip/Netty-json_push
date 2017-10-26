@@ -1,0 +1,5 @@
+.project
+.metadata
+.recommenders/*
+netty-json_push/bin/*
+netty-json_push/.*
