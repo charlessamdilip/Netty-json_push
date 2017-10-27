@@ -10,10 +10,10 @@
 * gson [2.8.2](http://central.maven.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar)
 
 ## Build
-* Build packages of protobuf in "com.json_push.template" into project src
-- Move to the project directory (netty-json_push)
-- execute `protoc --java_out=src template/proto/query.proto`
-* Build the project with jars of Netty, Kafka-clients, protobuff
+> Build packages of protobuf in "com.json_push.template" into project src
+> > Move to the project directory (netty-json_push)
+> > execute `protoc --java_out=src template/proto/query.proto`
+>Build the project with jars of Netty, Kafka-clients, protobuff
 
 ## Start the server
 * Run the project with "com.json_push.init.Server"
