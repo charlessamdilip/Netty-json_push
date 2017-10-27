@@ -1,9 +1,0 @@
-syntax = "proto3";
-package com.json_push.template;
-
-option java_package = "com.json_push.protobuf";
-option java_outer_classname = "QueryProto";
-
-message Query {
-	map<string, string> pairs = 1;
-}

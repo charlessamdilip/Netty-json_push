@@ -1,0 +1,13 @@
+syntax="proto3";
+package template.proto;
+
+option java_package = "com.json_push.protobuf";
+option java_outer_classname = "QueryProtobuf";
+
+message ParamValue {
+	repeated string value = 1;
+}
+
+message Query {
+	map<string, ParamValue> queryParams = 1;
+}
