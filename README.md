@@ -24,7 +24,10 @@
 * Excute the following `java -Xbootclasspath/a:<Directory_of_jar>/slf4j-api-1.7.25.jar  -jar netty-json_push.jar`
 
 
+> ##NOTE
 > * server starts at localhost:8080
 > * Make sure started the kafka bootstrap:servers at localhost:9092(default kafka)
 > * Protobuf are saved to Kafka Topic `netty-queue`(create topic `netty-queue` with required configuration in cmd)
 > * Test Consumer available in test folder which will listen toe the `netty-queue`
+> * Server accepts the query at the root "/" or "/index.html" via `GET` method only.
+> * Server responds with http html response
