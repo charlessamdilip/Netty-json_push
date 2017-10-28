@@ -26,7 +26,7 @@ public class Error404 {
 			"<h1>Oops!!!</h1>"+ NEWLINE +
 			"<h2>404 - Resources Not Found</h2>"+ NEWLINE +
 			"<div class='error-actions'>" + NEWLINE +
-			"<a href='/' class='btn btn-primary'><i class='icon-home icon-white'></i> Take Me Home </a>" + NEWLINE +
+			"<a href='/' class='btn btn-primary'><i class='glyphicon glyphicon-home'></i> Take Me Home </a>" + NEWLINE +
 			"</div>" + NEWLINE +
 			"</div>" + NEWLINE +
 			"</div>" + NEWLINE +

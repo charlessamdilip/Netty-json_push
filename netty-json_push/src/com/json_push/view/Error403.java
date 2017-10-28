@@ -26,7 +26,7 @@ public class Error403 {
 			"<h1>Oops!!!</h1>"+ NEWLINE +
 			"<h2>403 - Forbidden</h2>"+ NEWLINE +
 			"<div class='error-actions'>" + NEWLINE +
-			"<a href='/' class='btn btn-primary'><i class='icon-home icon-white'></i> Take Me Home </a>" + NEWLINE +
+			"<a href='/' class='btn btn-primary'><i class='glyphicon glyphicon-home'></i> Take Me Home </a>" + NEWLINE +
 			"</div>" + NEWLINE +
 			"</div>" + NEWLINE +
 			"</div>" + NEWLINE +

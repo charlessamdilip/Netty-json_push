@@ -26,7 +26,7 @@ public class Error500 {
     		"<h1>Oops!!!</h1>"+ NEWLINE +
     		"<h2>500 - Inernal Server Error</h2>"+ NEWLINE +
     		"<div class='error-actions'>" + NEWLINE +
-			"<a href='/' class='btn btn-primary'><i class='icon-home icon-white'></i> Take Me Home </a>" + NEWLINE +
+			"<a href='/' class='btn btn-primary'><i class='glyphicon glyphicon-home'></i> Take Me Home </a>" + NEWLINE +
 			"</div>" + NEWLINE +
     		"</div>" + NEWLINE +
     		"</div>" + NEWLINE +
