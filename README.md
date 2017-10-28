@@ -19,8 +19,10 @@
 
 ## Start the server
 * Run the project with "com.json_push.init.Server" with sl4j-api-1.7.25 jar in Xpath
-
-
-## Using the jar
+### Using the jar
 * Find the jar in [releases](https://github.com/charlessamdilip/Netty-json_push/releases)
 * Excute the following `java -Xbootclasspath/a:<Directory_of_jar>/slf4j-api-1.7.25.jar  -jar netty-json_push.jar`
+
+
+> * server starts at localhost:8080
+> * Make sure started the kafka bootstrap:servers at localhost:9092(default kafka)
