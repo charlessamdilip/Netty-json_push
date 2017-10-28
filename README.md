@@ -24,7 +24,8 @@
 * Excute the following `java -Xbootclasspath/a:<Directory_of_jar>/slf4j-api-1.7.25.jar  -jar netty-json_push.jar`
 
 
-> ##NOTE
+> NOTE
+> ---
 > * server starts at localhost:8080
 > * Make sure started the kafka bootstrap:servers at localhost:9092(default kafka)
 > * Protobuf are saved to Kafka Topic `netty-queue`(create topic `netty-queue` with required configuration in cmd)
