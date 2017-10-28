@@ -14,6 +14,7 @@ import com.json_push.helper.ResponseHelper;
 import com.json_push.view.Error400;
 import com.json_push.view.Error403;
 import com.json_push.view.Error404;
+import com.json_push.view.Error500;
 import com.json_push.view.handler.IndexPageHandler;
 
 public class ServerHandler extends SimpleChannelInboundHandler<FullHttpRequest>{
@@ -24,14 +25,14 @@ public class ServerHandler extends SimpleChannelInboundHandler<FullHttpRequest>{
 		// Handle a bad request.
         if (!req.decoderResult().isSuccess()) {
         	logger.severe("Request is unable to be decoded");
-            ResponseHelper.sendHttpResponse(ctx, req, BAD_REQUEST, Error400.getView());
+            ResponseHelper.sendHttpResponse(ctx, BAD_REQUEST, Error400.getView());
             return;
         }
         
         // Allow only GET methods.
         if (req.method() != GET) {
         	logger.severe("Request method is not of GET method");
-        	ResponseHelper.sendHttpResponse(ctx, req, FORBIDDEN, Error403.getView());
+        	ResponseHelper.sendHttpResponse(ctx, FORBIDDEN, Error403.getView());
             return;
         }
         
@@ -39,18 +40,19 @@ public class ServerHandler extends SimpleChannelInboundHandler<FullHttpRequest>{
         QueryStringDecoder decoder = new QueryStringDecoder(req.uri());
         logger.info("Routing the request and validating the route");
         if ("/".equals(decoder.path()) || "/index.html".equals(decoder.path())) {
-            IndexPageHandler.buildIndex(ctx, req, decoder.parameters());
+            IndexPageHandler.buildIndex(ctx, decoder.parameters());
             return;
         }
         
         // Resource not Found
     	logger.severe("Unable to find the requested resource on the server");
-        ResponseHelper.sendHttpResponse(ctx, req, NOT_FOUND, Error404.getView());
+        ResponseHelper.sendHttpResponse(ctx, NOT_FOUND, Error404.getView());
 	}
 	
 	@Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         cause.printStackTrace();
+        ResponseHelper.sendHttpResponse(ctx, NOT_FOUND, Error500.getView());
         ctx.close();
     }
 	

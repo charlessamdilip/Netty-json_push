@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
+import com.json_push.helper.KafkaHelper;
 import com.json_push.helper.ProtoBufHelper;
 import com.json_push.helper.ResponseHelper;
 import com.json_push.protobuf.QueryProtobuf.Query;
@@ -19,7 +20,7 @@ public class IndexPageHandler {
 	private static final Logger logger = Logger.getLogger(IndexPageHandler.class.getName());
 	
 	// Handles the entire logic of Index
-	public static void buildIndex(ChannelHandlerContext ctx,  FullHttpRequest req, Map<String, List<String>> parameterMap)
+	public static void buildIndex(ChannelHandlerContext ctx, Map<String, List<String>> parameterMap)
 		throws Exception {
 		String jsonStr = null;
 		
@@ -28,13 +29,13 @@ public class IndexPageHandler {
 			logger.info("Creating the Protobuf");
 			Query query = ProtoBufHelper.queryToProtobuf(parameterMap);
 			
-			// TODO: push to kafka
+			KafkaHelper.pushProtobuf(query);
 			
 			jsonStr = ProtoBufHelper.protobufToJson(query);
 		}
 		
 		logger.info("Rendering the Index ");
-		ResponseHelper.sendHttpResponse(ctx, req, OK, IndexView.getView(jsonStr));
+		ResponseHelper.sendHttpResponse(ctx, OK, IndexView.getView(jsonStr));
         return;
 	}
 }
