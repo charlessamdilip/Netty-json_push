@@ -26,3 +26,5 @@
 
 > * server starts at localhost:8080
 > * Make sure started the kafka bootstrap:servers at localhost:9092(default kafka)
+> * Protobuf are saved to Kafka Topic `netty-queue`(create topic `netty-queue` with required configuration in cmd)
+> * Test Consumer available in test folder which will listen toe the `netty-queue`
