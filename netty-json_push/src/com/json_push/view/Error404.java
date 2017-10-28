@@ -13,7 +13,7 @@ public class Error404 {
 	        "<head>" + NEWLINE + 
 	        "<title>Netty JSON Push - 404</title>"+ NEWLINE + 
 	        "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>" + NEWLINE +
-			"<style>" + 
+			"<style>" +  NEWLINE +
 			".error-template {padding: 40px 15px;text-align: center;}" + NEWLINE +
 			".error-actions {margin-top:15px;margin-bottom:15px;}" + NEWLINE +
 			".error-actions .btn { margin-right:10px; }" + NEWLINE +
