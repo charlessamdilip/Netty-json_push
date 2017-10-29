@@ -14,17 +14,17 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.handler.codec.http.HttpUtil;
 
 public class ResponseHelper {
-	private static final Logger logger = Logger.getLogger(ResponseHelper.class.getName());
-	
-	// Rendering the Corresponding View
-	public static void sendHttpResponse(ChannelHandlerContext ctx, HttpResponseStatus status, ByteBuf content) {
-		logger.info("Rendering the view");
-		FullHttpResponse res = new DefaultFullHttpResponse(HTTP_1_1, status, content);
+    private static final Logger logger = Logger.getLogger(ResponseHelper.class.getName());
 
-        res.headers().set(HttpHeaderNames.CONTENT_TYPE, "text/html; charset=UTF-8");
-        HttpUtil.setContentLength(res, content.readableBytes());       
-        
-        // close the channel as the response returned
-        ctx.channel().writeAndFlush(res).addListener(ChannelFutureListener.CLOSE);
-   }
+    // Rendering the Corresponding View
+    public static void sendHttpResponse(ChannelHandlerContext ctx, HttpResponseStatus status, ByteBuf content) {
+	logger.info("Rendering the view");
+	FullHttpResponse res = new DefaultFullHttpResponse(HTTP_1_1, status, content);
+
+	res.headers().set(HttpHeaderNames.CONTENT_TYPE, "text/html; charset=UTF-8");
+	HttpUtil.setContentLength(res, content.readableBytes());
+
+	// close the channel as the response returned
+	ctx.channel().writeAndFlush(res).addListener(ChannelFutureListener.CLOSE);
+    }
 }
