@@ -24,7 +24,7 @@
 ### Using the jar
 * Find the jar in [releases](https://github.com/charlessamdilip/Netty-json_push/releases)
 * Excute the following `java -Xbootclasspath/a:<Directory_of_jar>/slf4j-api-1.7.25.jar  -jar netty-json_push.jar`
-
+* Execute the maven jar directly `java -jar netty-json_push-0.0.1-jar-with-dependencies.jar` 
 
 > NOTE
 > ---
