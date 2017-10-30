@@ -1,10 +1,12 @@
 package com.json_push.helper;
 
 import java.util.Properties;
+import java.util.concurrent.Future;
 import java.util.logging.Logger;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.clients.producer.RecordMetadata;
 
 import com.json_push.protobuf.QueryProtobuf.Query;
 
@@ -25,7 +27,7 @@ public class KafkaHelper {
 	props.put("buffer.memory", 33554432);
 	props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 	props.put("value.serializer", "org.apache.kafka.common.serialization.ByteArraySerializer");
-	setProducer(new KafkaProducer<>(props));
+	setProducer(new KafkaProducer(props));
     }
 
     public static void pushProtobuf(Query queryProtobuf) throws Exception {
@@ -34,7 +36,18 @@ public class KafkaHelper {
 	}
 
 	logger.info("Pushing to Kafka netty-queue1");
-	_instance.getProducer().send(new ProducerRecord<String, byte[]>("netty-queue", queryProtobuf.toByteArray()));
+	Future<RecordMetadata> sendMetadata = _instance.getProducer()
+		.send(new ProducerRecord<String, byte[]>("netty-queue", queryProtobuf.toByteArray()));
+
+	// Throws an exception on unsuccessful send
+	sendMetadata.get();
+    }
+
+    public static void close() {
+	logger.info("Closing the kafka producer connection");
+	if (null != _instance) {
+	    _instance.getProducer().close();
+	}
     }
 
     private KafkaProducer getProducer() {

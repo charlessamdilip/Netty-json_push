@@ -2,6 +2,8 @@ package com.json_push.init;
 
 import java.util.logging.Logger;
 
+import com.json_push.helper.KafkaHelper;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.EventLoopGroup;
@@ -32,6 +34,7 @@ public class Server {
 	} finally {
 	    bossGroup.shutdownGracefully();
 	    workerGroup.shutdownGracefully();
+	    KafkaHelper.close();
 	}
     }
 }
