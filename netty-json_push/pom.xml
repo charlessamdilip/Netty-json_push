@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>netty-json_push</groupId>
   <artifactId>netty-json_push</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>netty-json_push</name>
   <build>
     <sourceDirectory>src</sourceDirectory>
@@ -15,6 +15,19 @@
       </resource>
     </resources>
     <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>com.json_push.init.Server</mainClass>
+            </manifest>
+          </archive>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+      </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.3</version>
