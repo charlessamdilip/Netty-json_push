@@ -16,6 +16,8 @@
   * execute `protoc --java_out=src template/proto/query.proto`
 * Build the project with jars of netty-all-4.1.16.Final, kafka-clients-0.11.0.1, protobuf-java-3.4.0, protobuf-java-util-3.4.0, gson-2.8.2
 
+## Maven Build
+* To build a stand alone jar with all dependencies execute `mvn clean compile assembly:single`
 
 ## Start the server
 * Run the project with "com.json_push.init.Server" with sl4j-api-1.7.25 jar in Xpath
