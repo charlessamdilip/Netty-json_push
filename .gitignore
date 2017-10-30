@@ -5,5 +5,3 @@ netty-json_push/bin/*
 netty-json_push/.*
 netty-json_push/src/com/json_push/protobuf/*
 netty-json_push/lib/*
-!netty-json_push/.classpath
-!netty-json_push/.project

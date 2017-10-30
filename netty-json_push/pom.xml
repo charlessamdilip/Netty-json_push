@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>netty-json_push</groupId>
+  <artifactId>netty-json_push</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>netty-json_push</name>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source/>
+          <target/>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+  	<!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+	<dependency>
+	    <groupId>io.netty</groupId>
+	    <artifactId>netty-all</artifactId>
+	    <version>4.1.16.Final</version>
+	</dependency>
+  	
+  	<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
+	<dependency>
+	    <groupId>org.apache.kafka</groupId>
+	    <artifactId>kafka-clients</artifactId>
+	    <version>0.11.0.1</version>
+	</dependency>
+  	<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
+	<dependency>
+	    <groupId>com.google.protobuf</groupId>
+	    <artifactId>protobuf-java</artifactId>
+	    <version>3.4.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java-util -->
+	<dependency>
+	    <groupId>com.google.protobuf</groupId>
+	    <artifactId>protobuf-java-util</artifactId>
+	    <version>3.4.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+	<dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>
+	    <version>2.8.2</version>
+	</dependency>
+  </dependencies>
+</project>
